@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Port Scanner Lab</title>
+</head>
+<body>
+    <h2>🛡️ Port Scanner Lab</h2>
+    <form method="POST">
+        <label>Target (IP or domain):</label>
+        <input type="text" name="target" placeholder="e.g. scanme.nmap.org" required>
+        <button type="submit">Scan</button>
+    </form>
+
+    {% if target %}
+        <h3>Scan Results for {{ target }}:</h3>
+        <ul>
+            {% for result in results %}
+                <li>{{ result }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>
